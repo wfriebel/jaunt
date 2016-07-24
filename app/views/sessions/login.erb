@@ -1,0 +1,9 @@
+<form action="/login" method="post">
+	<input type="text" name="user_name" placeholder="Username">
+	<input type="password" name="password" placeholder="Password">
+	<input type="submit" value="Login">
+</form>
+
+<% if @error %>
+	<p class="error">*<%= @error %>*</p>
+<% end %>
