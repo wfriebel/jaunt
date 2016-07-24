@@ -25,7 +25,7 @@ end
 	User.create(
 		user_name: Faker::Name.name,
 		email: Faker::Internet.email,
-		password_hash: "123"
+		password: "123"
 		)
 end
 
@@ -46,6 +46,7 @@ end
 
 100.times do
 	Comment.create(
+		content: Faker::Lorem.paragraph,
 		post_id: Post.all.sample.id,
 		user_id: User.all.sample.id
 	)
