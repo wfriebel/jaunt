@@ -3,15 +3,18 @@
 <h4><%=@user.user_name%>'s Comments:</h4>
 <ul>
   <% @user.posts.each do |post|%>
-  <li><b id="comment-header"> <%=Location.find(post.location_id).name %> </b></li>
-  <p>
-    <%= post.content %>
-  </p>
-  <% end %>
-  <script type="text/javascript">
-  $("p").hide();
-  $("b").click(function(){
-    $("p").show();
-  });
-  </script>
+  <div>
+    <li id="<%=post.id%>"><b> <%=Location.find(post.location_id).name %> </b></li>
+    <p class="post_content">
+      <%= post.content %>
+    </p>
+    <% end %>
+  </div>
 </ul>
+
+<script type="text/javascript">
+$("p").hide();
+$("li").click(function(){
+  $(this).siblings().toggle();// $("li").click(function(){
+  });
+</script>
