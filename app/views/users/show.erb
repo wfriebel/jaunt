@@ -1,0 +1,17 @@
+<h2><%=@user.user_name%></h2>
+
+<h4><%=@user.user_name%>'s Comments:</h4>
+<ul>
+  <% @user.posts.each do |post|%>
+  <li><b id="comment-header"> <%=Location.find(post.location_id).name %> </b></li>
+  <p>
+    <%= post.content %>
+  </p>
+  <% end %>
+  <script type="text/javascript">
+  $("p").hide();
+  $("b").click(function(){
+    $("p").show();
+  });
+  </script>
+</ul>
