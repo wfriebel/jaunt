@@ -9,9 +9,9 @@ get '/locations/:location_id' do
   erb :'locations/show'
 end
 
-post 'locations/:location_id/post' do
-  @location = Location.find(params[:locaction_id])
-  @posts = Post.create(user_id: session[:id], location_id: @location.id, content: params[:content])
+post '/locations/:location_id/post' do
+  @location = Location.find(params[:location_id])
+  @posts = Post.create(user_id: çsession[:id], location_id: @location.id, content: params[:content])
   # if @post.save
     redirect "/locations/:location_id"
   # else
