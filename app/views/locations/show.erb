@@ -18,7 +18,7 @@
       <h5> Posted by:
         <a href="/users/<%=post.user_id%>">
           <%= User.find(post.user_id).user_name %></h5>
-        </a>
+        </a> <i><%= post.created_at %></i>
       <p>
         <%= post.content %>
       </p>
@@ -30,18 +30,17 @@
       <input type='hidden' name='location_id' id='location_id' value="<%=@location.id%>"/>
       <input type='hidden' name='post_id' id='post_id' value="<%=post.id%>"/>
       <textarea name='comment_content' id='post_comment_form'></textarea><br />
-      <input type='submit' value='Submit' />
+        <input type='submit' value='Submit' />
     </form>
         <ul id="post_comments">
           <% post.comments.each do |comment| %>
             <li>
               <p>
-                User:
-                <%= User.find(comment.user_id).user_name %>
+                Comment:
+                <%= comment.content %>
               </p>
               <p>
-                Comment id:
-                <%= comment.id %>
+                <a href="/users/<%=comment.user_id%>"><i><%= User.find(comment.user_id).user_name %></i></a> <i><%= comment.created_at %></i>
               </p>
             </li>
             <% end %>
