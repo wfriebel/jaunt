@@ -2,13 +2,10 @@
 
 <p><%=@location.description%></p>
 
-<form action='/locations/<%=@location.id%>/post' method='post'>
-  <input type='hidden' name='user_id' id='user_id' />
-  <h5>Comment:</h5><br />
-  <textarea name='comment' id='comment'></textarea><br />
-
-  <input type='hidden' name='articleid' id='articleid'/>
-
+<h5>Post:</h5><br />
+<form action='/post' method='post'>
+  <input type='hidden' name='location_id' id='location_id' value="<%=@location.id%>"/>
+  <textarea name='content' id='comment'></textarea><br />
   <input type='submit' value='Submit' />
 </form>
 
@@ -27,6 +24,14 @@
       </p>
 
     </li>
+
+    <h5>Leave a Comment:</h5><br />
+    <form action='/comment' method='post'>
+      <input type='hidden' name='location_id' id='location_id' value="<%=@location.id%>"/>
+      <input type='hidden' name='post_id' id='post_id' value="<%=post.id%>"/>
+      <textarea name='comment_content' id='post_comment_form'></textarea><br />
+      <input type='submit' value='Submit' />
+    </form>
         <ul id="post_comments">
           <% post.comments.each do |comment| %>
             <li>
