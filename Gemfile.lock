@@ -14,15 +14,10 @@ GEM
       minitest (~> 5.1)
       thread_safe (~> 0.3, >= 0.3.4)
       tzinfo (~> 1.1)
-<<<<<<< HEAD
-    arel (6.0.0)
-    backports (3.6.4)
     bcrypt (3.1.11)
-=======
     addressable (2.4.0)
     arel (6.0.3)
     backports (3.6.8)
->>>>>>> 93f0b54bc94035202da14cbd1c07084176fbc01f
     builder (3.2.2)
     capybara (2.7.1)
       addressable
@@ -96,10 +91,7 @@ PLATFORMS
 DEPENDENCIES
   activerecord (~> 4.2.0)
   activesupport (~> 4.2.0)
-<<<<<<< HEAD
   bcrypt
-=======
->>>>>>> 93f0b54bc94035202da14cbd1c07084176fbc01f
   capybara
   factory_girl
   faker
