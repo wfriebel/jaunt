@@ -12,12 +12,21 @@
   -->
   <link rel="stylesheet" href="/css/application.css">
 
-  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+  <script src="//code.jquery.com/jquery-1.12.0.min.js"></script>
   <script src="/js/application.js"></script>
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
 
   <title></title>
 </head>
 <body>
+  <% if current_user%>
+    <a href="/logout">Logout <%= current_user.user_name %></a>
+    <a href="/">Home</a>
+  <% else%>
+    <a href="/login">Login</a> | <a href="/register">Register</a>
+    <% %>
+  <% end %>
+  <h1>Jaunt</h1>
   <%= yield %>
 </body>
 </html>
