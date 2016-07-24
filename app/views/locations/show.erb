@@ -15,6 +15,15 @@
       <p>
         <%= post.content %>
       </p>
+    <form action='/location/<%=post.location_id%>/post' method='post'>
+      <input type='hidden' name='user_id' id='user_id'/>
+      <h5>Comment:</h5>
+      <textarea name='comment' id='comment'></textarea><br />
+
+      <input type='hidden' name='articleid' id='articleid'/>
+
+      <input type='submit' value='Submit' />
+    </form>
     </li>
         <ul id="post_comments">
           <% post.comments.each do |comment| %>
