@@ -4,8 +4,8 @@ get '/locations' do
 end
 
 get '/locations/:location_id' do
-  @location = Location.find(params[:locaction_id])
-  @posts = Post.where(location_id: @location.location_id)
+  @location = Location.find(params[:location_id])
+  @posts = Post.where(location_id: @location.id)
   erb :'locations/show'
 end
 

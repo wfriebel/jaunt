@@ -1,7 +1,7 @@
 <ul>
 
   <% @locations.each do |location| %>
-    <li> <%= location %> </li>
+    <li><a href="/locations/<%=location.id%>"> <%= location.name %> </a></li>
   <% end %>
 
 </ul>
