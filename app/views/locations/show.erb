@@ -1,0 +1,45 @@
+<h2><%=@location.name%></h2>
+
+<p><%=@location.description%></p>
+
+<form action='/locations/<%=@location.id%>/post' method='post'>
+  <input type='hidden' name='user_id' id='user_id' />
+  <h5>Comment:</h5><br />
+  <textarea name='comment' id='comment'></textarea><br />
+
+  <input type='hidden' name='articleid' id='articleid'/>
+
+  <input type='submit' value='Submit' />
+</form>
+
+<h3>Posts:</h3>
+
+<ul id="posts">
+
+  <% @posts.each do |post| %>
+    <li>
+      <h5> Posted by:
+        <a href="/users/<%=post.user_id%>">
+          <%= User.find(post.user_id).user_name %></h5>
+        </a>
+      <p>
+        <%= post.content %>
+      </p>
+
+    </li>
+        <ul id="post_comments">
+          <% post.comments.each do |comment| %>
+            <li>
+              <p>
+                User:
+                <%= User.find(comment.user_id).user_name %>
+              </p>
+              <p>
+                Comment id:
+                <%= comment.id %>
+              </p>
+            </li>
+            <% end %>
+        </ul>
+  <% end %>
+</ul>
