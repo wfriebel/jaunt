@@ -8,3 +8,8 @@ get '/locations/:location_id' do
   @posts = Post.where(location_id: @location.id)
   erb :'locations/show'
 end
+
+
+post '/locations/:location_id' do
+  redirect '/locations/#{params[:location_id]}'
+end

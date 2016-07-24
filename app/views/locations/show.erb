@@ -25,25 +25,25 @@
 
     </li>
 
+    <ul id="post_comments">
+      <% post.comments.each do |comment| %>
+      <li>
+        <p>
+          Comment:
+          <%= comment.content %>
+        </p>
+        <p>
+          <a href="/users/<%=comment.user_id%>"><i><%= User.find(comment.user_id).user_name %></i></a> <i><%= comment.created_at %></i>
+        </p>
+      </li>
+      <% end %>
+    </ul>
     <h5>Leave a Comment:</h5><br />
-    <form action='/comment' method='post'>
+    <form action='/locations/<%=@location.id%>' method='post'>
       <input type='hidden' name='location_id' id='location_id' value="<%=@location.id%>"/>
       <input type='hidden' name='post_id' id='post_id' value="<%=post.id%>"/>
       <textarea name='comment_content' id='post_comment_form'></textarea><br />
         <input type='submit' value='Submit' />
     </form>
-        <ul id="post_comments">
-          <% post.comments.each do |comment| %>
-            <li>
-              <p>
-                Comment:
-                <%= comment.content %>
-              </p>
-              <p>
-                <a href="/users/<%=comment.user_id%>"><i><%= User.find(comment.user_id).user_name %></i></a> <i><%= comment.created_at %></i>
-              </p>
-            </li>
-            <% end %>
-        </ul>
   <% end %>
 </ul>

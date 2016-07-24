@@ -1,12 +1,15 @@
 
 
-<ul class="center-block">
+<ul>
+
 
   <% @locations.each do |location| %>
-    <li class="center-block">
+    <li>
       <div class="location-wrapper">
       <a class="location-list" href="/locations/<%=location.id%>">
-        <%= location.name %>
+        <!-- <%= location.name %> -->
+        <a class="btn btn-default" href="/locations/<%=location.id%>" role=location><%=location.name%></a>
+
       </a>
       </div>
     </li>
