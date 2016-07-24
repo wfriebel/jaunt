@@ -11,7 +11,7 @@ end
 
 post '/locations/:location_id/post' do
   @location = Location.find(params[:location_id])
-  @posts = Post.create(user_id: çsession[:id], location_id: @location.id, content: params[:content])
+  @posts = Post.create(user_id: session[:id], location_id: @location.id, content: params[:content])
   # if @post.save
     redirect "/locations/:location_id"
   # else
