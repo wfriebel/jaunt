@@ -2,3 +2,35 @@
 	color: red;
 	display: inline-block;
 }
+
+body{
+	background-color: lightgray;
+	background-image: url("http://i2.cdn.turner.com/cnnnext/dam/assets/160418163107-nos-alive-music-festival-super-169.jpg");
+	background-attachment: fixed;
+	background-size: 100%;
+
+}
+
+p{
+	color: white;
+}
+
+h2{
+	color: white;
+}
+
+h3{
+	color:white;
+}
+
+h5{
+	color: white;
+}
+
+.location-list{
+	font-size: 150%;
+}
+
+.btn{
+	font-weight: bold;
+}

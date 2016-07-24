@@ -1,8 +1,18 @@
+
+
 <ul>
 
+
   <% @locations.each do |location| %>
-    <li><a href="/locations/<%=location.id%>"> <%= location.name %> </a></li>
+    <li>
+      <div class="location-wrapper">
+      <a class="location-list" href="/locations/<%=location.id%>">
+        <!-- <%= location.name %> -->
+        <a class="btn btn-default" href="/locations/<%=location.id%>" role=location><%=location.name%></a>
+
+      </a>
+      </div>
+    </li>
   <% end %>
 
 </ul>
-
