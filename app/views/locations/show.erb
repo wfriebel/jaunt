@@ -18,7 +18,7 @@
       <h5> Posted by:
         <a href="/users/<%=post.user_id%>">
           <%= User.find(post.user_id).user_name %></h5>
-        </a> <i><%= post.created_at %></i>
+        </a> 
       <p>
         <%= post.content %>
       </p>
