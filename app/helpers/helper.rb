@@ -13,3 +13,7 @@ def current_user
 		nil
 	end
 end
+
+def chronological(content)
+	content.sort { |a, b| b.id <=> a.id }
+end

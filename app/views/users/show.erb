@@ -1,20 +1,19 @@
 <h2><%=@user.user_name%></h2>
 
 <h4><%=@user.user_name%>'s Comments:</h4>
-<ul>
+<ul style="height:400px;">
   <% @user.posts.each do |post|%>
-  <div>
-    <li id="<%=post.id%>"><b> <%=Location.find(post.location_id).name %> </b></li>
+  <div class="list_element">
+    <li class="list_item"><b> <%=Location.find(post.location_id).name %> </b></li>
     <p class="post_content">
       <%= post.content %>
     </p>
+    <script type="text/javascript">
+    $(".post_content").hide();
+    $(".list_element").click(function(){
+      $(".post_content").toggle(400)
+    });
+    </script>
     <% end %>
   </div>
 </ul>
-
-<script type="text/javascript">
-$("p").hide();
-$("li").click(function(){
-  $(this).siblings().toggle();// $("li").click(function(){
-  });
-</script>

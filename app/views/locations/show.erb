@@ -33,6 +33,7 @@
         <input type='submit' value='Submit' />
     </form>
         <ul id="post_comments">
+          <% post.comments.sort {|a,b| b.id <=> a.id}%>
           <% post.comments.each do |comment| %>
             <li>
               <p>
