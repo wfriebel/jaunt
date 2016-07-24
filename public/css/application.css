@@ -2,3 +2,13 @@
 	color: red;
 	display: inline-block;
 }
+
+.center-block {
+  width: 35%;
+	display: block;
+  margin: 0 auto;
+}
+
+.location-list{
+	font-size: 150%;
+}
